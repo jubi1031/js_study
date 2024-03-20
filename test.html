@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" />
+    <!-- <script src="" defer></script> -->
+  </head>
+  <body>
+    <style>
+      .btn1.on {
+        background-color: tomato;
+      }
+      .list {
+        display: none;
+      }
+      .list.on {
+        display: block;
+      }
+    </style>
+    <button id="btnNum1">아이디버튼</button>
+    <button class="btn1 t1">보이게처리1</button>
+    <button class="btn1 t2">보이게처리2</button>
+    <ul class="list">
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+    </ul>
+
+    <script>
+      const BTNNUM1 = document.getElementById('btnNum1');
+      const BTNNUM2 = document.getElementsByClassName('btn1');
+      const btn = document.querySelector('.btn1');
+      const btnAll = document.querySelectorAll('.btn1');
+      const List = document.querySelector('.list');
+
+      btn.addEventListener('click', (e) => {
+        console.log(e.target);
+        List.classList.toggle('on');
+        // this.classList.toggle('on');
+        // btn.classList.toggle('on');
+      });
+    </script>
+  </body>
+</html>
