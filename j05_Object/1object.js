@@ -15,7 +15,7 @@ let apple = {
 };
 
 console.log(apple[0]);
-console.log(apple.name);
+console.log(apple.name); //코딩하는 시점에서 정적으로 접근에 확정됨
 console.log(apple['hi-bye']);
 console.log(apple['hi-bye2']);
 
