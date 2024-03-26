@@ -12,9 +12,6 @@
         height: 80vh;
         border: 1px solid red;
       }
-      .modal.on {
-        display: block;
-      }
       .modal {
         background-color: rgba(0, 0, 0, 0.5);
         position: fixed;
@@ -23,7 +20,7 @@
         left: 0;
         top: 0;
         backdrop-filter: blur(2px);
-        display: none;
+        display: block;
       }
       .modal section {
         width: 50%;
@@ -32,6 +29,7 @@
         padding: 2rem;
         border-radius: 30px;
         margin: 10% auto 0 auto;
+        position: relative;
       }
       .modal .close {
         position: absolute;
