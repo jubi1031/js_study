@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .box {
+        border: 3px dotted red;
+      }
+      .con {
+        border: 2px solid lightgray;
+      }
+
+      .con > p {
+        border: 1px solid lightgray;
+      }
+    </style>
+    <!-- <div class="box box1">추가할 요소1</div>
+    <div class="box box2">추가할 요소2</div> -->
+    <div class="con">
+      <p>리스트1</p>
+      <p class="test">리스트2</p>
+      <p>리스트3</p>
+    </div>
+    <button class="btn1">클릭!</button>
+    <script>
+      // const $box1 = document.querySelector('.box1');
+      // const $box2 = document.querySelector('.box2');
+      const $con = document.querySelector('.con');
+      const $test = document.querySelector('.test'); //지정위치
+      const $btn = document.querySelector('.btn1');
+
+      const newBox = `<div class="box box2">새롭게 추가된 요소</div>`;
+      //부모노드.insertAdjacentHTML('추가위치'. html로 추가되는 문자열
+      //afterbegin(안에 맨 앞), afterend(밖에 맨 뒤), beforebegin(밖에 맨 앞), beforeend(안에 맨 뒤)
+
+      // 요소제거 : 부모요소.removeChild(제거대상노드) 제거대상노드.remove()
+      $btn.addEventListener('click', () => {
+        //$con.insertAdjacentHTML('afterbegin', newBox);
+        //$con.insertAdjacentHTML('beforebegin', newBox);
+
+        //$con.removeChild($test);
+        $test.remove();
+      });
+    </script>
+  </body>
+</html>
