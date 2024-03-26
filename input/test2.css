@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sec4 {
+    border: 1px solid red;
+    padding: 2rem 0 100px 0;
+}
+
+.mw2 {
+    border: 1px solid lightgreen;
+    max-width: 500px;
+    width: calc(100% - 2rem);
+    margin: auto;
+    background-color: #eaeaea;
+    padding: 1rem;
+}
+
+.sec4 h2 {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.sec4 form {
+    border: 1px solid lightblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    gap: 2rem;
+    position: relative;
+}
+
+.sec4 form>* {
+    border: 1px solid lightcoral;
+}
+
+.sec4 label:nth-of-type(2) {
+    order: 10;
+}
+
+.sec4 label:nth-of-type(3) {
+    grid-row: span 2;
+}
+
+.sec4 button {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+}
+
+.sec4 label {
+    position: relative;
+}
+
+.sec4 label span {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: 0.3s;
+}
+
+.sec4 label input,
+.sec4 label textarea {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.sec4 label input:focus,
+.sec4 label textarea:focus {
+    background-color: #eaeaea;
+}
+
+.sec4 label input:focus+span,
+.sec4 label textarea:focus+span {
+    top: -30px;
+}
