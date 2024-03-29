@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .con {
+        border: 1px solid red;
+        padding: 1rem;
+      }
+      .box {
+        border: 3px solid lightblue;
+      }
+    </style>
+    <div class="con">
+      <div class="box1">박스1</div>
+      <div class="box2">박스2</div>
+    </div>
+    <script>
+      // .box1를 복제해서
+      // .con의 마지막 자식 요소로 추가
+      // .clonNode() 요소만 복제됨
+      // .clonNode(true) 내용까지 복제됨
+      const cloneItem = document.querySelector('.box1').cloneNode(true);
+      const $con = document.querySelector('.con');
+      console.log(cloneItem);
+      setTimeout(() => {
+        $con.append(cloneItem);
+      }, 3000);
+    </script>
+  </body>
+</html>

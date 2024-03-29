@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .con {
+        width: 400px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        margin: 100px auto;
+      }
+      .inner {
+        background-color: lightcoral;
+        width: 50%;
+        height: 50%;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+      }
+      .btn {
+        padding: 1rem;
+      }
+    </style>
+    <div class="con">
+      <div class="inner">
+        <button class="btn">클릭~!</button>
+      </div>
+    </div>
+    <section style="height: 200vh">영역</section>
+    <a href="#">어디론가 링크</a>
+    <script>
+      const $con = document.querySelector('.con');
+      const $inner = document.querySelector('.inner');
+      const $btn = document.querySelector('.btn');
+
+      const link = document.querySelectorAll('a'); //All은 배열로 됨
+      link.forEach((a) =>
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+        })
+      );
+      $con.addEventListener('click', (e) => {
+        //e.preventDefault(); 클릭을 막음 보통a나input의 재실행을 막음
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+        console.log('con target', e.target);
+        console.log('con currentTarget', e.currentTarget);
+        console.log('---------------------------------------');
+      });
+      $inner.addEventListener('click', (e) => {
+        //e.stopPropagation();
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+        console.log('inner target', e.target);
+        console.log('inner currentTarget', e.currentTarget);
+        console.log('---------------------------------------');
+      });
+      $btn.addEventListener('click', (e) => {
+        //e.preventDefault()
+        // e.stopPropagation();  버블업이 되지 않음, 별로 사용하지 않나봄..
+        // e.stopImmediatePropagation(); 모든걸 다 정지
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+        console.log('btn target', e.target);
+        console.log('btn currentTarget', e.currentTarget);
+        console.log('---------------------------------------');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>오늘 날씨는 <span>맑음</span> ^^</p>
+    <!-- <p class="icon">
+      <img src="./wicon.png" alt="흐린 후 맑음" />
+      <img src="./w2icon.png" alt="비 예정" />
+    </p> -->
+    <button class="btn" data-icon="./wicon.png" data-alt="흐린 후 맑음">
+      오늘날씨
+    </button>
+    <p class="weather">
+      날씨 아이콘이 출력되는 곳
+      <img src="icon" alt="" />
+    </p>
+    <script>
+      const $btn = document.querySelector('.btn');
+      const $icon = document.querySelector('.icon');
+
+      //버튼을 클릭하면 img의 src 속성이 변경되도록
+      //   $btn.addEventListener('click', () => {
+      //     $icon.setAttribute('src', './wicon.png');
+      //     $icon.setAttribute('alt', '비예정');
+      //   });
+
+      //버튼을 클릭하면 버튼이 갖고있는 속성 data- 를 가져와서 img요소에 대입
+      $btn.addEventListener('click', () => {
+        let imgSrc = $btn.getAttribute('data-icon');
+        let imgAlt = $btn.getAttribute('data-alt');
+        $icon.setAttribute('src', imgSrc);
+        $icon.setAttribute('alt', imgAlt);
+      });
+      const $text = document.querySelector('.text');
+      setTimeout(() => {
+        //$text.textContent = '내일도 <span>밁음</span> 예정';
+        //$text.innerHTML = '내일도 <span>밁음</span> 예정';
+        $text.outerHTML = '<div>요소가 변경되었음</div>';
+      }, 3000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .con {
+        border: 1px solid red;
+        padding: 1rem;
+      }
+      .box {
+        border: 3px solid lightblue;
+      }
+    </style>
+    <div class="con">
+      <div class="old">교체 전</div>
+      <div class="box2">박스2</div>
+    </div>
+    <script>
+      //.old를 새로운 .new로 교체
+      //.replace(new, old)
+      //.replaceChild(new, old)  //반환값 갖는다
+      const newbox = document.createElement('div');
+      newbox.classList.add('new', 'box');
+      newbox.textContent = '새로운 박스다!';
+      //let test = document.querySelector('.con').replaceChild(newbox, old);
+      // console.log(test);
+      setTimeout(() => {
+        let old = document.querySelector('.old');
+        //   document.querySelector('.con').replaceChild(newbox, old);
+        old.replaceWith(newbox);
+        console.log(old.replaceWith(newbox));
+      }, 3000);
+    </script>
+  </body>
+</html>

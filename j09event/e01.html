@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./01.js" defer></script>
+  </head>
+  <body>
+    <style>
+      .btn1 {
+        position: absolute;
+        left: 50%;
+        z-index: 10;
+      }
+    </style>
+    <button class="btn1">버튼</button>
+    <button class="btn2">경고창</button>
+    <script>
+      window.addEventListener('load', () => {
+        console.log('log');
+      });
+      window.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded');
+      });
+    </script>
+    <script>
+      const $btn1 = document.querySelector('.btn1');
+      const $btn2 = document.querySelector('.btn2');
+      // $btn1.addEventListener(이벤트명, 리스너, [옵션 (생략가능)])
+      const logText = () => {
+        console.log('함수가 실행됨');
+      };
+      //   function logText() {
+      //     console.log('함수가 실행됨');
+      //   }
+      const option = { once: true }; //이벤트를 1회만 실행함
+      $btn1.addEventListener('click', logText, option);
+
+      $btn2.addEventListener('click', clickButton);
+      function clickButton() {
+        alert('버튼 2가 클릭됐어요');
+      }
+      setTimeout(() => {
+        $btn2.removeEventListener('click', clickButton);
+        console.log('3초 지남');
+      }, 3000);
+    </script>
+  </body>
+</html>

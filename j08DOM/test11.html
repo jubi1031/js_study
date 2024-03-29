@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .sample {
+        border-color: lightgoldenrodyellow;
+        padding: 1rem;
+        font-size: 3rem;
+        width: 50%;
+      }
+      .on {
+        background-color: red;
+        color: white;
+      }
+    </style>
+    <p class="sample">샘플영역</p>
+    <button class="btn1">스타일 변경</button>
+    <script>
+      const $sample = document.querySelector('.sample');
+      const $btn = document.querySelector('.btn1');
+
+      $btn.addEventListener('click', () => {
+        let fontSize = '100';
+        let R = 200;
+        let G = 50;
+        let B = 150;
+        let A = 0.5;
+        // $sample.classList.add('on');
+        //  $sample.classList.remove('on');
+        // $sample.classList.toggle('on');
+        $sample.style.color = 'white';
+        //$sample.style.backgroundColor = 'red';
+        $sample.style.fontSize = `${fontSize}px`;
+        $sample.style.backgroundColor = `rgba(${R},${G},${B},${A})`;
+      });
+
+      console.log(getComputedStyle($sample));
+    </script>
+  </body>
+</html>

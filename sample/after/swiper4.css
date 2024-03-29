@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eaeaea;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+.sec {
+    border: 1px solid red;
+    margin-top: 100px;
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.sec .inner {
+    max-width: 1200px;
+    width: calc(100% - 2rem);
+    margin: auto;
+}
+
+.sec h2 {
+    padding: 100px 50px;
+    border-radius: 2rem;
+    background-color: pink;
+    position: relative;
+    overflow: hidden;
+}
+
+.sec h2::before,
+.sec h2::after {
+    content: '';
+    position: absolute;
+    background-color: hotpink;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    opacity: 0.8;
+    filter: blur(10px);
+}
+
+.sec h2::before {
+    width: 80px;
+    height: 80px;
+    left: 50px;
+    bottom: 50px;
+}
+
+.sec h2::after {
+    top: -300px;
+    right: -100px;
+}
+
+.sec h2 span {
+    z-index: 10;
+    position: relative;
+}
+
+.sec .next1,
+.sec .prev1 {
+    top: 130px;
+    left: 50%;
+    right: auto;
+    border: 1px solid red;
+    width: 50px;
+    transform: translateX(500%);
+}
+
+.sec .prev1 {
+    transform: translateX(calc(500% - 50px));
+}
+
+.sec .slide {
+    border: 1px solid lightseagreen;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 30;
+    overflow: visible;
+}
+
+.sec .slide .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.sec .slide .card {
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 60%;
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+    transform: translateY(-50%);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5),
+        -8px -8px 10px rgba(213, 78, 78, 0.5);
+}

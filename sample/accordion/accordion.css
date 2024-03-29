@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inner {
+  width: 500px;
+  margin: auto;
+}
+.inner h2 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.inner li {
+  list-style: none;
+  border: 1px solid lightgray;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+}
+.inner .ques {
+  padding: 2rem;
+  cursor: pointer;
+  position: relative;
+  border-radius: 2rem 2rem 0 0;
+}
+.inner .ques::before {
+  content: '>';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner .answer {
+  /* height: 0; */
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.inner .answer p {
+  padding: 2rem;
+}
+
+.inner .ques.on {
+  background-color: aliceblue;
+}
+.inner .ques.on::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+.inner .ques.on + .answer {
+  /* height: auto; */
+  max-height: 1000px;
+}
