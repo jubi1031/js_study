@@ -1,17 +1,14 @@
 const $FAQcon = document.querySelector('.faq');
 const $list = FAQcon.querySelectorAll('.ques');
 
-let isTrue = true;
+$FAQcon.addEventListener('click', (e) => {
+  const q = e.target.closest('.ques');
+  if (!q) return;
 
-$list.forEach((q) =>
-  q.addEventListener('click', (e) => {
-    if (e.target.classList.contains('on')) {
-      q.classList.remove('on');
-      return;
-    }
-    $list.forEach((item) => {
+  $list.forEach((item) => {
+    if (item != q) {
       item.classList.remove('on');
-    });
-    q.classList.add('on');
-  })
-);
+    }
+  });
+  q.classList.toggle('on');
+});
