@@ -1,27 +1,45 @@
 const $ham = document.querySelector('.ham');
 const $gnb = document.querySelector('.gnb');
 const $person = document.querySelector('.person');
+const $li = $gnb.querySelectorAll('li');
+const $aLink = $gnb.querySelectorAll('a');
 
-$ham.addEventListener('click', () => {
+$ham.addEventListener('click', (e) => {
+  e.preventDefault();
   $gnb.classList.toggle('on');
   $person.classList.toggle('on');
-});
-$aLink.addEventListener('click', () => {
-  $li.classList.remove('on');
-});
-$gnb.addEventListener('click', (e) => {
-  if (!e.target.closest('a')) return;
-  if (e.target.closest('a').parentElement.parentElement === $gnb) {
-    e.preventDefault();
-  }
   $li.forEach((el) => {
-    if (el != e.target.closest('li')) {
+    el.classList.remove('on');
+  });
+});
+
+$gnb.addEventListener('click', (e) => {
+  let closestA = e.target.closest('a');
+  let closestLI = e.target.closest('li');
+
+  if (!closestA) return;
+
+  if (closestA.parentElement.parentElement === $gnb) {
+    e.preventDefault();
+  } else {
+    $li.forEach((el) => {
+      el.classList.remove('on');
+    });
+    $gnb.classList.remove('on');
+    $person.classList.remove('on');
+  }
+
+  $li.forEach((el) => {
+    if (el != closestLI) {
       el.classList.remove('on');
     }
   });
-  $gnb.querySelectorAll('li').forEach((el) => el.classList.remove('on'));
-  e.target.closest('li').classList.toggle('on');
+
+  if (closestLI) {
+    closestLI.classList.toggle('on');
+  }
 });
+
 let mainSlide = new Swiper('.mainSlide', {
   spaceBetween: 30,
   effect: 'fade',
