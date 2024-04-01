@@ -1,112 +1,145 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 li {
-    list-style: none;
+  list-style: none;
 }
-
 a {
-    color: inherit;
+  color: inherit;
 }
-
 .wrap {
-    width: 100%;
-    height: 100vh;
-    background-image: url('./bg.jpg');
-    background-size: cover;
-    background-position: right bottom;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./bg.jpg');
+  background-size: cover;
+  background-position: right bottom;
 }
-
 .wrap h1,
 .wrap .sns,
 .wrap footer {
-    position: fixed;
-    z-index: 10;
+  position: fixed;
+  z-index: 10;
 }
-
 .wrap h1 {
-    top: 100px;
-    left: 50px;
+  top: 100px;
+  left: 50px;
 }
-
 .wrap .sns {
-    top: 50px;
-    right: 50px;
-    display: flex;
-    gap: 2rem;
+  top: 50px;
+  right: 50px;
+  display: flex;
+  gap: 2rem;
 }
 
 .wrap .sns a:hover {
-    color: white;
+  color: white;
 }
-
 .wrap footer {
-    bottom: 0;
-    width: 100%;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    color: white;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  color: white;
 }
-
 .wrap footer ul {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .contents {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
-
 .contents article {
-    width: 14%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  width: 14%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
-
-.contents article>* {
-    position: absolute;
+.contents article > * {
+  position: absolute;
 }
 
 .contents article h2 {
-    top: 100px;
-    width: 100%;
-    border: 1px solid blue;
-    padding: 1rem 0 1rem 2rem;
-    position: relative;
+  top: 100px;
+  width: 100%;
+  padding: 1rem 0 1rem 2rem;
+  position: relative;
+  z-index: 10;
 }
-
 .contents article h2::before,
 .contents article h2::after {
-    content: '';
-    position: absolute;
+  content: '';
+  position: absolute;
+  transition: 0.3s;
 }
-
 .contents article h2::after {
-    width: 2px;
-    height: 26px;
-    background-color: rgba(0, 0, 0, 0.5);
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 2px;
+  height: 26px;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
 .contents article h2::before {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    left: 0;
-    top: 0;
+  width: 100%;
+  height: 0%;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
+.contents article h2 span {
+  position: relative;
+  z-index: 10;
+}
 .contents article video,
 .contents article .desc {
-    visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.contents article video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+.contents article .desc {
+  top: 60%;
+  padding: 1rem;
+  text-align: right;
+  color: white;
+  width: 25vw;
+  right: -100%;
+  opacity: 0;
+}
+
+.contents article:hover {
+  width: 25%;
+}
+.contents article:hover h2 {
+  color: white;
+}
+.contents article:hover h2::before {
+  height: 100%;
+}
+.contents article:hover h2::after {
+  background-color: white;
+}
+.contents article:hover video {
+  visibility: visible;
+  opacity: 0.8;
+}
+.contents article:hover .desc {
+  visibility: visible;
+  opacity: 1;
+  right: 0;
 }

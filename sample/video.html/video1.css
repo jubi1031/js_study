@@ -1,85 +1,80 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 header {
-    border: 1px solid red;
-    position: absolute;
-    max-width: 1200px;
-    width: calc(100% - 2rem);
-    padding: 2rem 0;
-    transform: translateX(-50%);
-    left: 50%;
-    z-index: 999;
-    color: white;
+  border: 1px solid red;
+  position: absolute;
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  transform: translateX(-50%);
+  padding: 2rem 0;
+  left: 50%;
+  z-index: 999;
+  color: white;
 }
 
 .sec1 {
-    border: 5px solid lightblue;
-    height: 100vh;
-    position: relative;
+  border: 10px solid lightblue;
+  height: 100vh;
+  position: relative;
 }
-
 .sec1 h2 {
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    max-width: 1200px;
-    width: calc(100% - 2rem);
-    transform: translateX(-50%);
-    left: 50%;
-    top: 200px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  transform: translateX(-50%);
+  left: 50%;
+  top: 200px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
-
 .sec1 h2 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
-
-.sec1::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(180deg,
-            rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3542279411764706) 61%, rgba(0, 0, 0, 1) 100%);
-}
-
 .sec1 video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
+.sec1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
 .sec1 .control {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
 }
-
 .sec1 button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 3rem;
-    transition: 0.3s;
-    transform: scale(1);
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 3rem;
+  transition: 0.3s;
+  transform: scale(1);
+  cursor: pointer;
 }
-
-
 .sec1 button:hover,
 .sec1 button:focus {
-    transform: scale(1.2);
-    color: lightgoldenrodyellow;
+  transform: scale(1.2);
+  color: lightgoldenrodyellow;
 }
-
 .sec2 {
-    background-color: aliceblue;
-    height: 150vh;
+  background-color: aliceblue;
+  height: 150vh;
 }

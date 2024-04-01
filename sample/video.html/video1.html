@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./video1.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,37 +11,39 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./video1.css" />
     <script src="./video1.js" defer></script>
   </head>
   <body>
     <div class="wrap">
       <header>
-        <section class="sec1">
-          <h2>
-            <strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. </strong
-            >Dolorem aliquam pariatur error, sunt optio quia culpa expedita
-            quibusdam dolore magnam hic eligendi quos eveniet amet illo vero
-            beatae, ratione harum!
-          </h2>
-          <!-- <video
-          autoplay
-          loop
-          muted
-          controls
-          preload="./"  
-          src="./1918465-hd_1920_1080_24fps.mp4"></video> -->
-          <video src="./1918465-hd_1920_1080_24fps.mp4"></video>
-          <!-- preload="./"썸네일?-->
-          <div class="control">
-            <button class="video"><i class="fa-solid fa-play"></i></button>
-            <!-- <i class="fa-solid fa-pause"></i> -->
-            <button class="btnStop">멈춤</button>
-            <button class="btnReStrart">처음부터 시작</button>
-          </div>
-        </section>
-        <section class="sec2">하단영역</section>
+        <h1>로고</h1>
+        <div class="ham">버튼</div>
       </header>
+      <section class="sec1">
+        <h2>
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong
+          >
+          Reiciendis necessitatibus repudiandae illum, sed pariatur odio aliquid
+          incidunt excepturi iure? Asperiores itaque odio, excepturi velit
+          perferendis quo dicta eos inventore corrupti.
+        </h2>
+        <video controls src="./1918465-hd_1920_1080_24fps.mp4"></video>
+        <!-- <video controls loop autoplay muted src="./1918465-hd_1920_1080_24fps.mp4"></video> -->
+        <div class="control">
+          <button class="btnVideo">
+            <!-- 재생 및 일시정지 -->
+            <i class="fa-solid fa-play"></i>
+            <!-- <i class="fa-solid fa-pause"></i> -->
+          </button>
+          <button class="btnStop">멈춤</button>
+          <button class="btnReStart">처음부터 시작</button>
+          <span class="videoCurrentTime"></span>
+          <span class="videoDuration"></span>
+        </div>
+      </section>
+      <section class="sec2">하단영역</section>
     </div>
   </body>
 </html>
