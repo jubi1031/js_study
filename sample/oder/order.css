@@ -1,76 +1,68 @@
 * {
-    margin: o;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .sec .inner {
-    border: 1px solid red;
-    width: 90%;
-    margin: auto;
+  border: 1px solid red;
+  width: 90%;
+  margin: auto;
 }
 
 .sec h2 {
-    text-align: center;
-    padding: 1rem;
-}
-
-.sec img {
-    width: 100px;
+  text-align: center;
+  padding: 1rem;
 }
 
 .list {
-    border: 1px solid yellow;
+  border: 1px solid yellow;
 }
 
 .list>li {
-    border: 1px solid rgb(0, 255, 115);
-    background-color: #222;
-    margin-bottom: 1rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    display: flex;
-    gap: 2rem;
+  border: 1px solid rgb(0, 255, 115);
+  background-color: #222;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .list>li>div {
-    border: 1px solid coral;
+  border: 1px solid coral;
 }
 
 .desc {
-    width: 55%;
+  width: 55%;
 }
 
 .pImg {
-    width: calc(45% - 2rem);
-    border-radius: 2rem;
-    overflow: hidden;
+  width: calc(45% - 2rem);
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 .pImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* .list>li:nth-of-type(odd) .desc {
-    order: 1;
-} */
-
 .list>li:nth-of-type(odd) .desc {
-    flex-direction: row-reverse;
+  order: 1;
 }

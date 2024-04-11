@@ -1,0 +1,94 @@
+@charset 'utf-8';
+@font-face {
+}
+:root {
+  /* color */
+  /* font */
+  /* size */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+}
+
+.slideCon {
+  width: 50%;
+  max-width: 500px;
+  border: 10px solid rgb(209, 209, 209);
+  margin: 100px auto;
+  overflow: hidden;
+}
+.slideCon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ul */
+/* .slideCon >ul {} */
+.slideWrap {
+  border: 5px solid lightblue;
+  display: flex;
+  width: 300%;
+}
+.slideWrap {
+  position: relative;
+  transition: 0.3s;
+  /* margin-left: 0%; */
+  /* margin-left: -100%; */
+  /* margin-left: -200%; */
+  left: 0%;
+  /* left: -100%; */
+  /* left: -200%; */
+}
+.slideCon:hover .slideWrap {
+  /* transform: translateX(0); */
+  /* transform: translateX(calc(100% / -3)); */
+  /* transform: translateX(calc(100% / -1.5)); */
+}
+
+/* li */
+/* .slideCon >ul>li {} */
+.slide {
+  border: 5px solid tomato;
+  width: calc(100% / 3);
+}
+.slide:nth-of-type(3) ~ li {
+  display: none;
+}
+
+.card {
+  border: 5px solid black;
+  position: relative;
+  padding-top: 65%;
+}
+.card > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card > span {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  top: 20px;
+  left: 20px;
+}
+
+button {
+  position: absolute;
+  top: 250px;
+  left: 100px;
+}
+.btnNext {
+  left: auto;
+  right: 100px;
+}
